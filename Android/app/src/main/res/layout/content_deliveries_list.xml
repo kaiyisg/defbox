@@ -63,34 +63,34 @@
                 app:layout_constraintTop_toBottomOf="@+id/txt_nextDeliveryDay" />
 
             <ImageView
-                android:id="@+id/icon_nextDeliverySource"
+                android:id="@+id/i_nextSource"
                 android:layout_width="24dp"
                 android:layout_height="24dp"
                 android:layout_marginLeft="40dp"
+                android:layout_marginStart="40dp"
                 android:layout_marginTop="8dp"
                 app:layout_constraintLeft_toRightOf="@+id/txt_nextDeliveryDay"
                 app:layout_constraintTop_toBottomOf="@+id/txt_nextDeliveryHeader"
-                app:srcCompat="@android:drawable/star_big_off"
-                android:layout_marginStart="40dp" />
-
-            <ImageView
-                android:id="@+id/icon_nextDeliveryLoc"
-                android:layout_width="24dp"
-                android:layout_height="24dp"
-                android:layout_marginTop="4dp"
-                app:layout_constraintLeft_toLeftOf="@+id/icon_nextDeliverySource"
-                app:layout_constraintTop_toBottomOf="@+id/icon_nextDeliverySource"
                 app:srcCompat="@android:drawable/star_big_off" />
 
             <ImageView
-                android:id="@+id/icon_nextDeliveryTime"
+                android:id="@+id/i_nextLoc"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginTop="4dp"
+                app:layout_constraintLeft_toLeftOf="@+id/i_nextSource"
+                app:layout_constraintTop_toBottomOf="@+id/i_nextSource"
+                app:srcCompat="@android:drawable/star_big_off" />
+
+            <ImageView
+                android:id="@+id/i_nextTime"
                 android:layout_width="24dp"
                 android:layout_height="24dp"
                 android:layout_marginBottom="16dp"
                 android:layout_marginTop="4dp"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintLeft_toLeftOf="@+id/icon_nextDeliveryLoc"
-                app:layout_constraintTop_toBottomOf="@+id/icon_nextDeliveryLoc"
+                app:layout_constraintLeft_toLeftOf="@+id/i_nextLoc"
+                app:layout_constraintTop_toBottomOf="@+id/i_nextLoc"
                 app:srcCompat="@android:drawable/star_big_off" />
 
             <TextView
@@ -101,9 +101,9 @@
                 android:text="Etsy"
                 android:textAppearance="@style/TextAppearance.AppCompat"
                 android:textSize="12sp"
-                app:layout_constraintBottom_toBottomOf="@+id/icon_nextDeliverySource"
-                app:layout_constraintLeft_toRightOf="@+id/icon_nextDeliverySource"
-                app:layout_constraintTop_toTopOf="@+id/icon_nextDeliverySource"
+                app:layout_constraintBottom_toBottomOf="@+id/i_nextSource"
+                app:layout_constraintLeft_toRightOf="@+id/i_nextSource"
+                app:layout_constraintTop_toTopOf="@+id/i_nextSource"
                 android:layout_marginStart="8dp" />
 
             <TextView
@@ -114,9 +114,9 @@
                 android:text="963 Hillsboro Avenue"
                 android:textAppearance="@style/TextAppearance.AppCompat"
                 android:textSize="12sp"
-                app:layout_constraintBottom_toBottomOf="@+id/icon_nextDeliveryLoc"
-                app:layout_constraintLeft_toRightOf="@+id/icon_nextDeliveryLoc"
-                app:layout_constraintTop_toTopOf="@+id/icon_nextDeliveryLoc"
+                app:layout_constraintBottom_toBottomOf="@+id/i_nextLoc"
+                app:layout_constraintLeft_toRightOf="@+id/i_nextLoc"
+                app:layout_constraintTop_toTopOf="@+id/i_nextLoc"
                 android:layout_marginStart="8dp" />
 
             <TextView
@@ -127,10 +127,236 @@
                 android:text="11:00 - 12:00 AM"
                 android:textAppearance="@style/TextAppearance.AppCompat"
                 android:textSize="12sp"
-                app:layout_constraintBottom_toBottomOf="@+id/icon_nextDeliveryTime"
-                app:layout_constraintLeft_toRightOf="@+id/icon_nextDeliveryTime"
-                app:layout_constraintTop_toTopOf="@+id/icon_nextDeliveryTime"
+                app:layout_constraintBottom_toBottomOf="@+id/i_nextTime"
+                app:layout_constraintLeft_toRightOf="@+id/i_nextTime"
+                app:layout_constraintTop_toTopOf="@+id/i_nextTime"
                 android:layout_marginStart="8dp" />
+        </android.support.constraint.ConstraintLayout>
+
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/pdelrow1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:layout_editor_absoluteY="375dp"
+            tools:layout_editor_absoluteX="0dp">
+
+            <TextView
+                android:id="@+id/zztxt2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="18"
+                android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+                android:textColor="@color/textDark"
+                android:textSize="24sp"
+                android:layout_marginLeft="16dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginTop="8dp" />
+
+            <TextView
+                android:id="@+id/yt1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="0dp"
+                android:layout_marginRight="0dp"
+                android:layout_marginTop="0dp"
+                android:text="SEP"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                android:textColor="@color/textDark"
+                android:textSize="14sp"
+                app:layout_constraintHorizontal_bias="0.538"
+                app:layout_constraintLeft_toLeftOf="@+id/zztxt2"
+                app:layout_constraintRight_toRightOf="@+id/zztxt2"
+                app:layout_constraintTop_toBottomOf="@+id/zztxt2" />
+
+            <ImageView
+                android:id="@+id/it1"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginStart="60dp"
+                app:srcCompat="@android:drawable/star_big_off"
+                app:layout_constraintLeft_toRightOf="@+id/zztxt2"
+                android:layout_marginLeft="40dp"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginTop="16dp" />
+
+            <ImageView
+                android:id="@+id/it2"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                app:srcCompat="@android:drawable/star_big_off"
+                app:layout_constraintLeft_toLeftOf="@+id/it1"
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="4dp"
+                app:layout_constraintTop_toBottomOf="@+id/it1" />
+
+            <ImageView
+                android:id="@+id/it3"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                app:srcCompat="@android:drawable/star_big_off"
+                android:layout_marginTop="4dp"
+                app:layout_constraintTop_toBottomOf="@+id/it2"
+                android:layout_marginLeft="0dp"
+                app:layout_constraintLeft_toLeftOf="@+id/it2" />
+
+            <TextView
+                android:id="@+id/zt1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="0dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="0dp"
+                android:text="BirchBox"
+                android:textAppearance="@style/TextAppearance.AppCompat"
+                android:textSize="12sp"
+                app:layout_constraintBottom_toBottomOf="@+id/it1"
+                app:layout_constraintLeft_toRightOf="@+id/it1"
+                app:layout_constraintTop_toTopOf="@+id/it1" />
+
+            <TextView
+                android:id="@+id/zt2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:text="963 Hillsboro Avenue"
+                android:textAppearance="@style/TextAppearance.AppCompat"
+                android:textSize="12sp"
+                app:layout_constraintTop_toTopOf="@+id/it2"
+                android:layout_marginTop="0dp"
+                app:layout_constraintBottom_toBottomOf="@+id/it2"
+                android:layout_marginBottom="0dp"
+                app:layout_constraintLeft_toRightOf="@+id/it2"
+                android:layout_marginLeft="8dp" />
+
+            <TextView
+                android:id="@+id/zt3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:text="11:00 - 12:00 AM"
+                android:textAppearance="@style/TextAppearance.AppCompat"
+                android:textSize="12sp"
+                app:layout_constraintBottom_toBottomOf="@+id/it3"
+                android:layout_marginBottom="0dp"
+                app:layout_constraintTop_toTopOf="@+id/it3"
+                android:layout_marginTop="0dp"
+                app:layout_constraintLeft_toRightOf="@+id/it3"
+                android:layout_marginLeft="0dp" />
+        </android.support.constraint.ConstraintLayout>
+
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/pdelrow2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:layout_editor_absoluteY="375dp"
+            tools:layout_editor_absoluteX="0dp">
+
+            <TextView
+                android:id="@+id/zzztxt2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="18"
+                android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+                android:textColor="@color/textDark"
+                android:textSize="24sp"
+                android:layout_marginLeft="16dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginTop="8dp" />
+
+            <TextView
+                android:id="@+id/yyt1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="0dp"
+                android:layout_marginRight="0dp"
+                android:layout_marginTop="0dp"
+                android:text="SEP"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                android:textColor="@color/textDark"
+                android:textSize="14sp"
+                app:layout_constraintHorizontal_bias="0.538"
+                app:layout_constraintLeft_toLeftOf="@+id/zzztxt2"
+                app:layout_constraintRight_toRightOf="@+id/zzztxt2"
+                app:layout_constraintTop_toBottomOf="@+id/zzztxt2" />
+
+            <ImageView
+                android:id="@+id/itt1"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginStart="60dp"
+                app:srcCompat="@android:drawable/star_big_off"
+                app:layout_constraintLeft_toRightOf="@+id/zzztxt2"
+                android:layout_marginLeft="40dp"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginTop="16dp" />
+
+            <ImageView
+                android:id="@+id/itt2"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                app:srcCompat="@android:drawable/star_big_off"
+                app:layout_constraintLeft_toLeftOf="@+id/itt1"
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="4dp"
+                app:layout_constraintTop_toBottomOf="@+id/itt1" />
+
+            <ImageView
+                android:id="@+id/itt3"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                app:srcCompat="@android:drawable/star_big_off"
+                android:layout_marginTop="4dp"
+                app:layout_constraintTop_toBottomOf="@+id/itt2"
+                android:layout_marginLeft="0dp"
+                app:layout_constraintLeft_toLeftOf="@+id/itt2" />
+
+            <TextView
+                android:id="@+id/ztt1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="0dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="0dp"
+                android:text="BirchBox"
+                android:textAppearance="@style/TextAppearance.AppCompat"
+                android:textSize="12sp"
+                app:layout_constraintBottom_toBottomOf="@+id/itt1"
+                app:layout_constraintLeft_toRightOf="@+id/itt1"
+                app:layout_constraintTop_toTopOf="@+id/itt1" />
+
+            <TextView
+                android:id="@+id/ztt2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:text="963 Hillsboro Avenue"
+                android:textAppearance="@style/TextAppearance.AppCompat"
+                android:textSize="12sp"
+                app:layout_constraintTop_toTopOf="@+id/itt2"
+                android:layout_marginTop="0dp"
+                app:layout_constraintBottom_toBottomOf="@+id/itt2"
+                android:layout_marginBottom="0dp"
+                app:layout_constraintLeft_toRightOf="@+id/itt2"
+                android:layout_marginLeft="8dp" />
+
+            <TextView
+                android:id="@+id/ztt3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:text="11:00 - 12:00 AM"
+                android:textAppearance="@style/TextAppearance.AppCompat"
+                android:textSize="12sp"
+                app:layout_constraintBottom_toBottomOf="@+id/itt3"
+                android:layout_marginBottom="0dp"
+                app:layout_constraintTop_toTopOf="@+id/itt3"
+                android:layout_marginTop="0dp"
+                app:layout_constraintLeft_toRightOf="@+id/itt3"
+                android:layout_marginLeft="0dp" />
         </android.support.constraint.ConstraintLayout>
     </LinearLayout>
 
