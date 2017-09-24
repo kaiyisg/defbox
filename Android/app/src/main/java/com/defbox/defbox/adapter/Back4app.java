@@ -19,6 +19,12 @@ import java.util.Map;
 
 public final class Back4app {
 
+    public static final String STATUS_0_PRESTART = "STATUS_0_PRESTART";
+    public static final String STATUS_1_STARTED = "STATUS_1_STARTED";
+    public static final String STATUS_2_REACHED = "STATUS_2_REACHED";
+    public static final String STATUS_3_OPENED = "STATUS_3_OPENED";
+    public static final String STATUS_4_CLOSED = "STATUS_4_CLOSED";
+    public static final String STATUS_5_LOCKED = "STATUS_5_LOCKED";
 
     public static void login(final Context context) {
         ParseUser.logInInBackground("kaiyi", "kaiyi", new LogInCallback() {
@@ -36,12 +42,30 @@ public final class Back4app {
     public static void getStatus(final Context context) {
         Map<String, String> parameters = new HashMap<String, String>();
 
-        ParseCloud.callFunctionInBackground("status", parameters, new FunctionCallback<String>() {
+        ParseCloud.callFunctionInBackground("getStatus", parameters, new FunctionCallback<String>() {
 
             @Override
             public void done(String status, ParseException e) {
                 if (e == null) {
-                    DialogBuilder.showToast(context, "reveived object: " + status);
+                    DialogBuilder.showToast(context, "received object: " + status);
+                }
+                else {
+                    DialogBuilder.showToast(context, e.toString());
+                }
+            }
+        });
+    }
+
+    public static void postStatus(final Context context, String status) {
+        Map<String, String> parameters = new HashMap<String, String>();
+        parameters.put("status", status);
+
+        ParseCloud.callFunctionInBackground("postStatus", parameters, new FunctionCallback<String>() {
+
+            @Override
+            public void done(String status, ParseException e) {
+                if (e == null) {
+                    DialogBuilder.showToast(context, "received object: " + status);
                 }
                 else {
                     DialogBuilder.showToast(context, e.toString());

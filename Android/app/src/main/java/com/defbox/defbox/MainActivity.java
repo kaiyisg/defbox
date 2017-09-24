@@ -38,8 +38,11 @@ public class MainActivity extends AppCompatActivity
 
         Back4app.initialize(context);
 
+        // HyperTrackAdapter.initialize(context);
+
         final Button loginButton = findViewById(R.id.button1);
         final Button statusButton = findViewById(R.id.button2);
+        final Button statusPostButton = findViewById(R.id.button3);
 
         loginButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
@@ -53,7 +56,11 @@ public class MainActivity extends AppCompatActivity
             }
         });
 
-
+        statusPostButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Back4app.postStatus(context, Back4app.STATUS_0_PRESTART);
+            }
+        });
     }
 
     @Override
