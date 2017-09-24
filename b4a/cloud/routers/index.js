@@ -10,4 +10,13 @@ route.get('/', function(req, res) {
   res.render('index', {testParam: 'Back4Apper'});
 });
 
+route.get('/hello', function(req, res) {
+
+  res.send('hello world')
+  // This is the code that renders the template
+  // res.render('index', {testParam: 'Back4Apper'});
+});
+
+
+
 module.exports = route;

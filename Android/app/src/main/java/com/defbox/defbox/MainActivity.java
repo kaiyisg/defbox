@@ -14,18 +14,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Button;
-import android.widget.Toast;
-
-import com.defbox.defbox.util.DialogBuilder;
-import com.parse.FunctionCallback;
-import com.parse.LogInCallback;
-import com.parse.Parse;
-import com.parse.ParseCloud;
-import com.parse.ParseException;
-import com.parse.ParseUser;
-
-import java.util.HashMap;
-import java.util.Map;
+import com.defbox.defbox.adapter.Back4app;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -57,46 +46,15 @@ public class MainActivity extends AppCompatActivity
 
         final Context context = getApplicationContext();
 
-        Parse.initialize(new Parse.Configuration.Builder(this)
-                .applicationId("eVHV5Cmc3TtPcJJYp4wK1mjPs4zZOxcJwAokkGV3") //PASTE YOUR Back4App APPLICATION ID
-                .clientKey("PYqsMqjEi2aveBF8yozobRyTLff4moi8IQaXbDFy") //PASTE YOUR CLIENT KEY
-                .server("https://parseapi.Back4app.com/").build()
-        );
+        Back4app.initialize(context);
 
         final Button loginButton = findViewById(R.id.button1);
 
         loginButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                ParseUser.logInInBackground("kaiyi", "kaiyi", new LogInCallback() {
-                    @Override
-                    public void done(ParseUser parseUser, ParseException e) {
-                        if (parseUser != null) {
-                            DialogBuilder.showToast(context, parseUser.getUsername() + " has successfully logged in");
-                        } else {
-                            DialogBuilder.showToast(context, "failed to login" + e.getMessage());
-                        }
-                    }
-                });
+                Back4app.login(context);
             }
         });
-
-        Map<String, String> parameters = new HashMap<String, String>();
-
-        ParseCloud.callFunctionInBackground("test", parameters, new FunctionCallback<Map<String, Object>>() {
-
-            @Override
-            public void done(Map<String, Object> mapObject, ParseException e) {
-                if (e == null) {
-                    // Everything went alright
-                }
-                else {
-                    // Something went wrong
-                }
-            }
-        });
-
-        // final Button registerButton = findViewById(R.id.button2);
-
 
 
     }
