@@ -1,0 +1,10 @@
+{
+  "applications": {
+    "_default": {
+      "link": "defbox"
+    },
+    "defbox": {
+      "applicationId": "eVHV5Cmc3TtPcJJYp4wK1mjPs4zZOxcJwAokkGV3"
+    }
+  }
+}
