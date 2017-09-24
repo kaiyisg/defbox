@@ -1,7 +1,11 @@
 package com.defbox.defbox;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+
+import com.defbox.defbox.adapter.Back4app;
 
 public class TripsListActivity extends AppCompatActivity implements StatusListener {
 
@@ -13,7 +17,12 @@ public class TripsListActivity extends AppCompatActivity implements StatusListen
 
     @Override
     public void onStatus(String status) {
-        // regardless of status, once click start delivery
-        findViewById(R.id.nextDeliveryRow);
+        // doesn't matter
+    }
+
+    // defined handler in layout xml attribute
+    public void onClickStartDelivery(View v) {
+        Back4app.postStatus(TripsListActivity.this, Back4app.STATUS_1_STARTED);
+        startActivity(new Intent(TripsListActivity.this, TripStartedActivity.class));
     }
 }

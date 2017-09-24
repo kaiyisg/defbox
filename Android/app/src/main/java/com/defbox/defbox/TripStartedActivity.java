@@ -13,6 +13,8 @@ public class TripStartedActivity extends AppCompatActivity implements StatusList
 
     @Override
     public void onStatus(String status) {
-
+        // Upon clicking:
+        // findViewById(R.id.notifyArrivedButton);
+        // send status change ->
     }
 }

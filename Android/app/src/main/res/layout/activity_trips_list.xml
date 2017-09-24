@@ -23,7 +23,8 @@
             android:id="@+id/nextDeliveryRow"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@color/colorPrimary">
+            android:background="@color/colorPrimary"
+            android:onClick="onClickStartDelivery">
 
             <TextView
                 android:id="@+id/txt_nextDeliveryHeader"
@@ -85,37 +86,37 @@
                 android:id="@+id/i_nextTime"
                 android:layout_width="24dp"
                 android:layout_height="24dp"
+                android:layout_marginLeft="0dp"
                 android:layout_marginTop="4dp"
                 app:layout_constraintLeft_toLeftOf="@+id/i_nextLoc"
                 app:layout_constraintTop_toBottomOf="@+id/i_nextLoc"
-                app:srcCompat="@drawable/clock"
-                android:layout_marginLeft="0dp" />
+                app:srcCompat="@drawable/clock" />
 
             <TextView
                 android:id="@+id/txt_nextDeliverySource"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="8dp"
+                android:layout_marginStart="8dp"
                 android:text="Etsy"
                 android:textAppearance="@style/TextAppearance.AppCompat"
                 android:textSize="12sp"
                 app:layout_constraintBottom_toBottomOf="@+id/i_nextSource"
                 app:layout_constraintLeft_toRightOf="@+id/i_nextSource"
-                app:layout_constraintTop_toTopOf="@+id/i_nextSource"
-                android:layout_marginStart="8dp" />
+                app:layout_constraintTop_toTopOf="@+id/i_nextSource" />
 
             <TextView
                 android:id="@+id/txt_nextDeliveryLoc"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="8dp"
+                android:layout_marginStart="8dp"
                 android:text="963 Hillsboro Avenue"
                 android:textAppearance="@style/TextAppearance.AppCompat"
                 android:textSize="12sp"
                 app:layout_constraintBottom_toBottomOf="@+id/i_nextLoc"
                 app:layout_constraintLeft_toRightOf="@+id/i_nextLoc"
-                app:layout_constraintTop_toTopOf="@+id/i_nextLoc"
-                android:layout_marginStart="8dp" />
+                app:layout_constraintTop_toTopOf="@+id/i_nextLoc" />
 
             <TextView
                 android:id="@+id/txt_nextDeliveryTime"
