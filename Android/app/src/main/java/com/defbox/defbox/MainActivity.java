@@ -29,6 +29,7 @@ public class MainActivity extends AppCompatActivity
 
     private Handler handler = new Handler();
     private Context context;
+    private Activity act;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,6 +48,7 @@ public class MainActivity extends AppCompatActivity
         navigationView.setNavigationItemSelectedListener(this);
 
         context = getApplicationContext();
+        act = MainActivity.this;
 
         Back4app.initialize(context);
 
@@ -66,7 +68,7 @@ public class MainActivity extends AppCompatActivity
 
         statusButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                Back4app.getStatus(context);
+                Back4app.getStatus(context, act);
             }
         });
 
@@ -96,7 +98,7 @@ public class MainActivity extends AppCompatActivity
         @Override
         public void run() {
             Log.d("miao", "run: 1 time");
-            Back4app.getStatus(context);
+            Back4app.getStatus(context, act);
             handler.postDelayed(this, 1000);
         }
     };

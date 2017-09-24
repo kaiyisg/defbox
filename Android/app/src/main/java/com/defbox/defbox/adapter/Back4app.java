@@ -1,7 +1,11 @@
 package com.defbox.defbox.adapter;
 
+import android.app.Activity;
 import android.content.Context;
+import android.util.Log;
+import android.widget.Button;
 
+import com.defbox.defbox.R;
 import com.defbox.defbox.util.DialogBuilder;
 import com.parse.FunctionCallback;
 import com.parse.LogInCallback;
@@ -25,6 +29,7 @@ public final class Back4app {
     public static final String STATUS_3_OPENED = "STATUS_3_OPENED";
     public static final String STATUS_4_CLOSED = "STATUS_4_CLOSED";
     public static final String STATUS_5_LOCKED = "STATUS_5_LOCKED";
+    public static String m = "";
 
     public static void login(final Context context) {
         ParseUser.logInInBackground("kaiyi", "kaiyi", new LogInCallback() {
@@ -39,15 +44,42 @@ public final class Back4app {
         });
     }
 
-    public static void getStatus(final Context context) {
+    public static void getStatus(final Context context, final Activity act) {
         Map<String, String> parameters = new HashMap<String, String>();
 
         ParseCloud.callFunctionInBackground("getStatus", parameters, new FunctionCallback<String>() {
 
             @Override
-            public void done(String status, ParseException e) {
+            public void done(final String status, ParseException e) {
+
                 if (e == null) {
-                    DialogBuilder.showToast(context, "received object: " + status);
+                    if (!lastReceivedStatus.equals(status)) {
+                        lastReceivedStatus = status;
+                        act.runOnUiThread(new Runnable() {
+                            @Override
+                            public void run() {
+                                final Button loginButton = act.findViewById(R.id.button1);
+                                Log.d("CHANGE", "change to update: "+ status);
+                                if (status.equals(STATUS_0_PRESTART)) {
+                                } else if (status.equals(STATUS_0_PRESTART)) {
+                                }else if (status.equals(STATUS_1_STARTED)) {
+
+                                }else if (status.equals(STATUS_2_REACHED)) {
+
+                                }else if (status.equals(STATUS_3_OPENED)) {
+
+                                }else if (status.equals(STATUS_4_CLOSED)) {
+
+                                }else if (status.equals(STATUS_5_LOCKED)) {
+
+                                }
+                            }
+                        });
+                    } else {
+                        Log.d("NO CHANGE", "no change to update: "+ status);
+                    }
+
+                    // DialogBuilder.showToast(context, "received object: " + status);
                 }
                 else {
                     DialogBuilder.showToast(context, e.toString());
