@@ -209,7 +209,9 @@
                 android:layout_marginTop="24dp"
                 android:text="John would be in Sunnyvale at around 9 AM. You will be notified when John is 30 mins away."
                 app:layout_constraintLeft_toLeftOf="@+id/imageView16"
-                app:layout_constraintTop_toBottomOf="@+id/imageView16" />
+                app:layout_constraintTop_toBottomOf="@+id/imageView16"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_marginBottom="16dp" />
 
         </android.support.constraint.ConstraintLayout>
     </LinearLayout>
