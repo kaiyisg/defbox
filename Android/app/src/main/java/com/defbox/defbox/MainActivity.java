@@ -1,8 +1,11 @@
 package com.defbox.defbox;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -14,6 +17,9 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Button;
 import com.defbox.defbox.adapter.Back4app;
+import com.defbox.defbox.adapter.HyperTrackAdapter;
+import com.defbox.defbox.util.DialogBuilder;
+import com.hypertrack.lib.HyperTrack;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -38,7 +44,7 @@ public class MainActivity extends AppCompatActivity
 
         Back4app.initialize(context);
 
-        // HyperTrackAdapter.initialize(context);
+        HyperTrackAdapter.initialize(this);
 
         final Button loginButton = findViewById(R.id.button1);
         final Button statusButton = findViewById(R.id.button2);
@@ -73,6 +79,13 @@ public class MainActivity extends AppCompatActivity
                 Back4app.postStatus(context, Back4app.STATUS_2_REACHED);
             }
         });
+
+        HyperTrackAdapter.checkForLocationSettings();
+    }
+
+    protected void onPause() {
+        super.onPause();
+        HyperTrackAdapter.stop();
     }
 
     @Override
@@ -125,4 +138,52 @@ public class MainActivity extends AppCompatActivity
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
+
+    /**
+         * Handle on Grant Location Permissions request accepted/denied result
+         * @param requestCode
+         * @param permissions
+         * @param grantResults
+         */
+    @Override
+    public void onRequestPermissionsResult(int requestCode,
+                                           @NonNull String[] permissions,
+                                           @NonNull int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions,
+                grantResults);
+
+        if (requestCode == HyperTrack.REQUEST_CODE_LOCATION_PERMISSION) {
+            if (grantResults.length > 0 && grantResults[0]
+                    == PackageManager.PERMISSION_GRANTED) {
+                // Check if Location Settings are enabled to proceed
+                HyperTrackAdapter.checkForLocationSettings();
+
+            } else {
+                // Handle Location Permission denied error
+                DialogBuilder.showToast(this, "enabled location services request denied");
+            }
+        }
+    }
+
+
+    /**
+     * Handle on Enable Location Services request accepted/denied result
+     * @param requestCode
+     * @param resultCode
+     */
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode,
+                                    Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == HyperTrack.REQUEST_CODE_LOCATION_SERVICES) {
+            if (resultCode == Activity.RESULT_OK) {
+                // Check if Location Settings are enabled to proceed
+                HyperTrackAdapter.checkForLocationSettings();
+            } else {
+                // Handle Enable Location Services request denied error
+                DialogBuilder.showToast(this, "enabled location services request denied");
+            }
+        }
+    }
+
 }
