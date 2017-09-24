@@ -19,7 +19,7 @@ public class CurrentDeliveryActivity extends AppCompatActivity implements Status
     private TextView addressText;
     private TextView titleText;
 
-    public static final String STATUS_1_TITLE = "Your package is arriving";
+    public static final String STATUS_1_TITLE = "Your Package is on the way!";
     public static final String STATUS_2_TITLE = "Your package has arrived";
     public static final String STATUS_3_TITLE = "DefBox is opened";
     public static final String STATUS_4_TITLE = "DefBox is closed";

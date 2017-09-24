@@ -53,7 +53,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Back4app.postStatus(context, Back4app.STATUS_0_PRESTART);
                 Back4app.lastReceivedStatus = Back4app.STATUS_0_PRESTART;
-                Intent i = new Intent(context, DelivererActivity.class);
+                Intent i = new Intent(context, TripsListActivity.class);
                 startActivity(i);
             }
         });
