@@ -18,17 +18,16 @@
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name"
-            android:theme="@style/AppTheme.NoActionBar">
-        </activity>
+            android:theme="@style/AppTheme.NoActionBar"></activity>
         <!-- Register Services here -->
-        <service android:name=".adapter.MyFirebaseMessagingService"
+        <service
+            android:name=".adapter.MyFirebaseMessagingService"
             android:exported="false">
             <intent-filter>
                 <action android:name="com.google.firebase.MESSAGING_EVENT" />
             </intent-filter>
         </service>
-
-            android:theme="@style/AppTheme.NoActionBar" />
+        android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".ReceiverActivity"
             android:label="@string/title_activity_receiver"
@@ -43,15 +42,19 @@
         <activity
             android:name=".DeliveriesListActivity"
             android:label="@string/title_activity_delivery_list"
-            android:theme="@style/AppTheme.NoActionBar">
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity
+            android:name=".FutureDeliveryActivity"
+            android:parentActivityName=".DeliveriesListActivity">
         </activity>
-        <activity android:name=".FutureDeliveryActivity"
-            android:parentActivityName=".DeliveriesListActivity" >
+        <activity android:name=".CurrentDeliveryActivity"
+            android:parentActivityName=".DeliveriesListActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
         </activity>
     </application>
 
