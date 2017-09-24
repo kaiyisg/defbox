@@ -38,7 +38,7 @@
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".FutureDeliveryActivity"
-            android:parentActivityName=".DeliveriesListActivity"></activity>
+            android:parentActivityName=".DeliveriesListActivity" />
         <activity
             android:name=".CurrentDeliveryActivity"
             android:parentActivityName=".DeliveriesListActivity">
@@ -48,7 +48,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".TripsListActivity"></activity>
+        <activity android:name=".TripsListActivity" />
+        <activity android:name=".TripStartedActivity"></activity>
     </application>
 
 </manifest>

@@ -336,7 +336,7 @@
                 android:layout_marginLeft="8dp"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="0dp"
-                android:text="32 S Mary Avenue"
+                android:text="963 Hillsboro Avenue"
                 android:textAppearance="@style/TextAppearance.AppCompat"
                 android:textSize="12sp"
                 app:layout_constraintBottom_toBottomOf="@+id/itt2"
