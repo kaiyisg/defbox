@@ -46,9 +46,11 @@
         <activity
             android:name=".FutureDeliveryActivity"
             android:parentActivityName=".DeliveriesListActivity"
+            android:theme="@style/AppTheme.NoActionBar"
             android:screenOrientation="portrait">
         </activity>
         <activity android:name=".CurrentDeliveryActivity"
+            android:theme="@style/AppTheme.NoActionBar"
             android:parentActivityName=".DeliveriesListActivity">
         </activity>
 
