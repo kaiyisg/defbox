@@ -14,7 +14,7 @@ import android.widget.TextView;
 
 import com.defbox.defbox.adapter.Back4app;
 
-public class CurrentDeliveryActivity extends AppCompatActivity implements StatusListener {
+public class CurrentDeliveryActivity extends EmergencyActivity implements StatusListener {
 
     private Handler handler = new Handler();
     private Context context;

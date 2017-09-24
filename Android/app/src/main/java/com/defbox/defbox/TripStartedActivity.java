@@ -8,7 +8,7 @@ import android.widget.Button;
 
 import com.defbox.defbox.adapter.Back4app;
 
-public class TripStartedActivity extends AppCompatActivity implements StatusListener {
+public class TripStartedActivity extends EmergencyActivity implements StatusListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

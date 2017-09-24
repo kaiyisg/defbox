@@ -15,7 +15,7 @@ import com.defbox.defbox.adapter.Back4app;
 
 import static com.defbox.defbox.adapter.Back4app.*;
 
-public class DeliveriesListActivity extends AppCompatActivity implements StatusListener {
+public class DeliveriesListActivity extends EmergencyActivity implements StatusListener {
 
     private Handler handler = new Handler();
     private Context context;

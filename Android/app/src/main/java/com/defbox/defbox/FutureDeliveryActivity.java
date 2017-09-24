@@ -10,7 +10,7 @@ import android.util.Log;
 
 import com.defbox.defbox.adapter.Back4app;
 
-public class FutureDeliveryActivity extends AppCompatActivity implements StatusListener {
+public class FutureDeliveryActivity extends EmergencyActivity implements StatusListener {
 
     private Handler handler = new Handler();
     private Context context;

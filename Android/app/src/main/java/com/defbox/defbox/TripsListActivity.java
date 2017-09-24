@@ -8,7 +8,7 @@ import android.view.View;
 import com.defbox.defbox.adapter.Back4app;
 
 // only one way forward, click start delivery to post status and move forward
-public class TripsListActivity extends AppCompatActivity implements StatusListener {
+public class TripsListActivity extends EmergencyActivity implements StatusListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
