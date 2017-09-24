@@ -49,10 +49,17 @@ public class MainActivity extends AppCompatActivity
         Back4app.initialize(context);
 
         final Button loginButton = findViewById(R.id.button1);
+        final Button statusButton = findViewById(R.id.button2);
 
         loginButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 Back4app.login(context);
+            }
+        });
+
+        statusButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Back4app.getStatus(context);
             }
         });
 

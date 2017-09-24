@@ -33,18 +33,18 @@ public final class Back4app {
         });
     }
 
-    public static void startDelivery() {
+    public static void getStatus(final Context context) {
         Map<String, String> parameters = new HashMap<String, String>();
 
-        ParseCloud.callFunctionInBackground("test", parameters, new FunctionCallback<Map<String, Object>>() {
+        ParseCloud.callFunctionInBackground("status", parameters, new FunctionCallback<String>() {
 
             @Override
-            public void done(Map<String, Object> mapObject, ParseException e) {
+            public void done(String status, ParseException e) {
                 if (e == null) {
-                    // Everything went alright
+                    DialogBuilder.showToast(context, "reveived object: " + status);
                 }
                 else {
-                    // Something went wrong
+                    DialogBuilder.showToast(context, e.toString());
                 }
             }
         });
