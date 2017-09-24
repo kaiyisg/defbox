@@ -18,6 +18,6 @@ public class DeliveriesListActivity extends AppCompatActivity {
 
     }
 
-    public void updateUIfromStatus()
+//    public void updateUIfromStatus();
 
 }

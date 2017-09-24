@@ -29,7 +29,7 @@ public final class Back4app {
     public static final String STATUS_3_OPENED = "STATUS_3_OPENED";
     public static final String STATUS_4_CLOSED = "STATUS_4_CLOSED";
     public static final String STATUS_5_LOCKED = "STATUS_5_LOCKED";
-    public static String m = "";
+    public static String lastReceivedStatus = "";
 
     public static void login(final Context context) {
         ParseUser.logInInBackground("kaiyi", "kaiyi", new LogInCallback() {
@@ -58,7 +58,6 @@ public final class Back4app {
                         act.runOnUiThread(new Runnable() {
                             @Override
                             public void run() {
-                                final Button loginButton = act.findViewById(R.id.button1);
                                 Log.d("CHANGE", "change to update: "+ status);
                                 if (status.equals(STATUS_0_PRESTART)) {
                                 } else if (status.equals(STATUS_0_PRESTART)) {

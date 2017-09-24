@@ -18,7 +18,13 @@
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <!-- Register Services here -->
         <service
             android:name=".adapter.MyFirebaseMessagingService"
@@ -42,19 +48,17 @@
         <activity
             android:name=".DeliveriesListActivity"
             android:label="@string/title_activity_delivery_list"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar"
+            android:screenOrientation="portrait">
+        </activity>
         <activity
             android:name=".FutureDeliveryActivity"
-            android:parentActivityName=".DeliveriesListActivity">
+            android:parentActivityName=".DeliveriesListActivity"
+            android:screenOrientation="portrait">
         </activity>
         <activity android:name=".CurrentDeliveryActivity"
-            android:parentActivityName=".DeliveriesListActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-
+            android:parentActivityName=".DeliveriesListActivity"
+            android:screenOrientation="portrait">
         </activity>
     </application>
 
