@@ -53,8 +53,8 @@
         <ImageView
             android:id="@+id/img_map"
             android:layout_width="match_parent"
-            android:layout_height="180dp"
-            app:srcCompat="@color/border_tracking_experience" />
+            android:layout_height="170dp"
+            app:srcCompat="@drawable/map_path" />
 
         <android.support.constraint.ConstraintLayout
             android:id="@+id/currentDeliveryRow"

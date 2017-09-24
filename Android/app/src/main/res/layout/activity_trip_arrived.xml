@@ -14,8 +14,8 @@
         <ImageView
             android:id="@+id/imageView7"
             android:layout_width="match_parent"
-            android:layout_height="120dp"
-            app:srcCompat="@drawable/driver_circled" />
+            android:layout_height="185dp"
+            app:srcCompat="@drawable/recepient" />
 
         <android.support.constraint.ConstraintLayout
             android:layout_width="match_parent"

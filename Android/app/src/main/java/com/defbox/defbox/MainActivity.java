@@ -149,7 +149,7 @@ public class MainActivity extends AppCompatActivity
             Intent myIntent = new Intent(MainActivity.this, DeliveriesListActivity.class);
             startActivity(myIntent);
         } else if (id == R.id.nav_deliverer) {
-            Intent myIntent = new Intent(MainActivity.this, DelivererActivity.class);
+            Intent myIntent = new Intent(MainActivity.this, TripsListActivity.class);
             startActivity(myIntent);
         }
 
