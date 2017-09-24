@@ -9,12 +9,9 @@
     tools:showIn="@layout/activity_receiver">
 
     <ScrollView
-        android:layout_width="368dp"
-        android:layout_height="495dp"
-        android:layout_marginLeft="8dp"
-        app:layout_constraintLeft_toLeftOf="parent"
-        tools:layout_editor_absoluteY="8dp"
-        android:layout_marginStart="8dp">
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintLeft_toLeftOf="parent">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -23,8 +20,11 @@
 
             <ImageView
                 android:id="@+id/imageView5"
-                android:layout_width="wrap_content"
-                android:layout_height="211dp"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:adjustViewBounds="true"
                 app:srcCompat="@drawable/man_image" />
 
             <TextView
@@ -45,8 +45,11 @@
 
             <ImageView
                 android:id="@+id/imageView6"
-                android:layout_width="match_parent"
-                android:layout_height="211dp"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:adjustViewBounds="true"
                 app:srcCompat="@drawable/map" />
 
             <TextView
