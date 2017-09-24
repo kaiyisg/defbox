@@ -5,7 +5,9 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.annotation.NonNull;
+import android.util.Log;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -24,6 +26,10 @@ import com.hypertrack.lib.HyperTrack;
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
+
+    private Handler handler = new Handler();
+    private Context context;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,7 +46,7 @@ public class MainActivity extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
-        final Context context = getApplicationContext();
+        context = getApplicationContext();
 
         Back4app.initialize(context);
 
@@ -81,7 +87,19 @@ public class MainActivity extends AppCompatActivity
         });
 
         HyperTrackAdapter.checkForLocationSettings();
+
+
+        handler.postDelayed(runnable, 100);
     }
+
+    private Runnable runnable = new Runnable() {
+        @Override
+        public void run() {
+            Log.d("miao", "run: 1 time");
+            Back4app.getStatus(context);
+            handler.postDelayed(this, 1000);
+        }
+    };
 
     protected void onPause() {
         super.onPause();
