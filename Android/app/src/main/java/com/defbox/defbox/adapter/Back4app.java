@@ -5,7 +5,9 @@ import android.content.Context;
 import android.util.Log;
 import android.widget.Button;
 
+import com.defbox.defbox.CurrentDeliveryActivity;
 import com.defbox.defbox.R;
+import com.defbox.defbox.StatusListener;
 import com.defbox.defbox.util.DialogBuilder;
 import com.parse.FunctionCallback;
 import com.parse.LogInCallback;
@@ -58,28 +60,13 @@ public final class Back4app {
                         act.runOnUiThread(new Runnable() {
                             @Override
                             public void run() {
-                                final Button loginButton = act.findViewById(R.id.button1);
                                 Log.d("CHANGE", "change to update: "+ status);
-                                if (status.equals(STATUS_0_PRESTART)) {
-                                } else if (status.equals(STATUS_0_PRESTART)) {
-                                }else if (status.equals(STATUS_1_STARTED)) {
-
-                                }else if (status.equals(STATUS_2_REACHED)) {
-
-                                }else if (status.equals(STATUS_3_OPENED)) {
-
-                                }else if (status.equals(STATUS_4_CLOSED)) {
-
-                                }else if (status.equals(STATUS_5_LOCKED)) {
-
-                                }
+                                ((StatusListener)act).onStatus(status);
                             }
                         });
                     } else {
                         Log.d("NO CHANGE", "no change to update: "+ status);
                     }
-
-                    // DialogBuilder.showToast(context, "received object: " + status);
                 }
                 else {
                     DialogBuilder.showToast(context, e.toString());
