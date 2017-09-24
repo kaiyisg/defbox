@@ -38,6 +38,9 @@ public class DeliveriesListActivity extends AppCompatActivity implements StatusL
                     startActivity(i);
                 }
             });
+            findViewById(R.id.nextDeliveryRow).setBackgroundResource(R.color.colorPrimary);
+        } else if (Back4app.lastReceivedStatus.equals(Back4app.STATUS_5_LOCKED)) {
+            findViewById(R.id.nextDeliveryRow).setBackgroundResource(R.color.colorAccent);
         }
     }
 

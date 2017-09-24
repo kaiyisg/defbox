@@ -9,6 +9,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 import com.defbox.defbox.adapter.Back4app;
@@ -19,12 +20,15 @@ public class CurrentDeliveryActivity extends AppCompatActivity implements Status
     private Context context;
     private Activity act;
     private TextView addressText;
-    private TextView titleText;
     private ConstraintLayout state_1;
     private ConstraintLayout state_2;
     private ConstraintLayout state_3;
     private ConstraintLayout state_4;
     private ConstraintLayout state_5;
+
+    private Button stage_3_button;
+    private Button stage_5_button;
+    private Button back_to_list;
 
 
     public static final String STATUS_1_ADDRESS = "Palo Alto";
@@ -39,11 +43,34 @@ public class CurrentDeliveryActivity extends AppCompatActivity implements Status
         setContentView(R.layout.activity_current_delivery);
 
         addressText = findViewById(R.id.textView19);
-        state_1.findViewById(R.id.row_1);
-        state_2.findViewById(R.id.row_2);
-        state_3.findViewById(R.id.row_3);
-        state_4.findViewById(R.id.row_4);
-        state_5.findViewById(R.id.row_5);
+        state_1 = findViewById(R.id.row_1);
+        state_1.setVisibility(View.VISIBLE);
+        state_2 = findViewById(R.id.row_2);
+        state_3 = findViewById(R.id.row_3);
+        state_4 = findViewById(R.id.row_4);
+        state_5 = findViewById(R.id.row_5);
+        stage_3_button = findViewById(R.id.STAGE_3_BUTTON);
+        stage_3_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Back4app.postStatus(context, Back4app.STATUS_3_OPENED);
+            }
+        });
+        stage_5_button = findViewById(R.id.STAGE_5_BUTTON);
+        stage_5_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Back4app.postStatus(context, Back4app.STATUS_5_LOCKED);
+            }
+        });
+        back_to_list = findViewById(R.id.BACK_TO_LIST_BUTTON);
+        back_to_list.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(context, DeliveriesListActivity.class));
+            }
+        });
+
 
 
         context = getApplicationContext();
@@ -71,7 +98,7 @@ public class CurrentDeliveryActivity extends AppCompatActivity implements Status
             state_3.setVisibility(View.GONE);
             state_4.setVisibility(View.GONE);
             state_5.setVisibility(View.GONE);
-            titleText.setText(STATUS_1_ADDRESS);
+            addressText.setText(STATUS_1_ADDRESS);
             Log.d("dd", "onStatus: no state change: "+ status);
         } else if (status.equals(Back4app.STATUS_2_REACHED)) {
             state_1.setVisibility(View.GONE);
@@ -79,7 +106,7 @@ public class CurrentDeliveryActivity extends AppCompatActivity implements Status
             state_3.setVisibility(View.GONE);
             state_4.setVisibility(View.GONE);
             state_5.setVisibility(View.GONE);
-            titleText.setText(STATUS_2_ADDRESS);
+            addressText.setText(STATUS_2_ADDRESS);
             Log.d("dd", "onStatus: change "+ status);
         } else if (status.equals(Back4app.STATUS_3_OPENED)) {
             state_1.setVisibility(View.GONE);
@@ -87,7 +114,7 @@ public class CurrentDeliveryActivity extends AppCompatActivity implements Status
             state_3.setVisibility(View.VISIBLE);
             state_4.setVisibility(View.GONE);
             state_5.setVisibility(View.GONE);
-            titleText.setText(STATUS_3_ADDRESS);
+            addressText.setText(STATUS_3_ADDRESS);
             Log.d("dd", "onStatus: change: "+ status);
         } else if (status.equals(Back4app.STATUS_4_CLOSED)) {
             state_1.setVisibility(View.GONE);
@@ -95,7 +122,7 @@ public class CurrentDeliveryActivity extends AppCompatActivity implements Status
             state_3.setVisibility(View.GONE);
             state_4.setVisibility(View.VISIBLE);
             state_5.setVisibility(View.GONE);
-            titleText.setText(STATUS_4_ADDRESS);
+            addressText.setText(STATUS_4_ADDRESS);
             Log.d("dd", "onStatus: change: "+ status);
         } else if (status.equals(Back4app.STATUS_5_LOCKED)) {
             state_1.setVisibility(View.GONE);
@@ -103,7 +130,7 @@ public class CurrentDeliveryActivity extends AppCompatActivity implements Status
             state_3.setVisibility(View.GONE);
             state_4.setVisibility(View.GONE);
             state_5.setVisibility(View.VISIBLE);
-            titleText.setText(STATUS_5_ADDRESS);
+            addressText.setText(STATUS_5_ADDRESS);
             Log.d("dd", "onStatus: change: "+ status);
         } else {
             Log.d("bad", "onStatus: bad state is here? "+ status);
