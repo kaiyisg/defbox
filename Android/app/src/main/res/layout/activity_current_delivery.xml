@@ -76,13 +76,13 @@
             app:srcCompat="@drawable/map_path"
             tools:layout_editor_absoluteX="8dp"
             tools:layout_editor_absoluteY="81dp" />
-        <WebView xmlns:android="http://schemas.android.com/apk/res/android"
-            android:id="@+id/webview"
-            android:layout_width="match_parent"
-            android:layout_height="170dp"
-            tools:layout_editor_absoluteX="8dp"
-            tools:layout_editor_absoluteY="81dp"
-            android:visibility="gone"/>
+        <!--<WebView xmlns:android="http://schemas.android.com/apk/res/android"-->
+            <!--android:id="@+id/webview"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="170dp"-->
+            <!--tools:layout_editor_absoluteX="8dp"-->
+            <!--tools:layout_editor_absoluteY="81dp"-->
+            <!--android:visibility="gone"/>-->
 
 
         <android.support.constraint.ConstraintLayout

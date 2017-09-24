@@ -42,24 +42,24 @@ public class CurrentDeliveryActivity extends EmergencyActivity implements Status
     public static final String STATUS_4_ADDRESS = "12 Hillsdale Drive";
     public static final String STATUS_5_ADDRESS = "12 Hillsdale Drive";
 
-    private void onCam() {
-        iv.setVisibility(View.GONE);
-        browser.setVisibility(View.VISIBLE);
-        browser.loadUrl("http://172.20.10.9:9999/html/cam_pic_new.php");
-    }
-
-    private void offCam() {
-        iv.setVisibility(View.VISIBLE);
-        browser.setVisibility(View.GONE);
-    }
+//    private void onCam() {
+//        iv.setVisibility(View.VISIBLE);
+//        browser.setVisibility(View.VISIBLE);
+//        browser.loadUrl("http://172.20.10.9:9999/html/cam_pic_new.php");
+//    }
+//
+//    private void offCam() {
+//        iv.setVisibility(View.VISIBLE);
+//        browser.setVisibility(View.GONE);
+//    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_current_delivery);
 
-        browser = (WebView)findViewById(R.id.webview);
-        iv = findViewById(R.id.img_map);
+//        browser = (WebView)findViewById(R.id.webview);
+//        iv = findViewById(R.id.img_map);
 
         addressText = findViewById(R.id.textView19);
         state_1 = findViewById(R.id.row_1);
@@ -105,7 +105,7 @@ public class CurrentDeliveryActivity extends EmergencyActivity implements Status
         context = getApplicationContext();
         act = CurrentDeliveryActivity.this;
         handler.postDelayed(runnable, 100);
-        offCam();
+//        offCam();
     }
 
     private Runnable runnable = new Runnable() {
@@ -128,7 +128,7 @@ public class CurrentDeliveryActivity extends EmergencyActivity implements Status
         Log.d("dd", "onStatus: callback reached: deterministicstring");
         if (status.equals(Back4app.STATUS_0_PRESTART)) {
             Log.d("dd", "onStatus: bad state: "+ status);
-            offCam();
+//            offCam();
         } else if (status.equals(Back4app.STATUS_1_STARTED)) {
             state_1.setVisibility(View.VISIBLE);
             state_2.setVisibility(View.GONE);
@@ -137,7 +137,7 @@ public class CurrentDeliveryActivity extends EmergencyActivity implements Status
             state_5.setVisibility(View.GONE);
             addressText.setText(STATUS_1_ADDRESS);
             Log.d("dd", "onStatus: no state change: "+ status);
-            offCam();
+//            offCam();
         } else if (status.equals(Back4app.STATUS_2_REACHED)) {
             state_1.setVisibility(View.GONE);
             state_2.setVisibility(View.VISIBLE);
@@ -146,7 +146,7 @@ public class CurrentDeliveryActivity extends EmergencyActivity implements Status
             state_5.setVisibility(View.GONE);
             addressText.setText(STATUS_2_ADDRESS);
             Log.d("dd", "onStatus: change "+ status);
-            onCam();
+//            onCam();
         } else if (status.equals(Back4app.STATUS_3_OPENED)) {
             state_1.setVisibility(View.GONE);
             state_2.setVisibility(View.GONE);
@@ -155,7 +155,7 @@ public class CurrentDeliveryActivity extends EmergencyActivity implements Status
             state_5.setVisibility(View.GONE);
             addressText.setText(STATUS_3_ADDRESS);
             Log.d("dd", "onStatus: change: "+ status);
-            onCam();
+//            onCam();
         } else if (status.equals(Back4app.STATUS_4_CLOSED)) {
             state_1.setVisibility(View.GONE);
             state_2.setVisibility(View.GONE);
@@ -164,7 +164,7 @@ public class CurrentDeliveryActivity extends EmergencyActivity implements Status
             state_5.setVisibility(View.GONE);
             addressText.setText(STATUS_4_ADDRESS);
             Log.d("dd", "onStatus: change: "+ status);
-            onCam();
+//            onCam();
         } else if (status.equals(Back4app.STATUS_5_LOCKED)) {
             state_1.setVisibility(View.GONE);
             state_2.setVisibility(View.GONE);
@@ -173,10 +173,10 @@ public class CurrentDeliveryActivity extends EmergencyActivity implements Status
             state_5.setVisibility(View.VISIBLE);
             addressText.setText(STATUS_5_ADDRESS);
             Log.d("dd", "onStatus: change: "+ status);
-            onCam();
+//            onCam();
         } else {
             Log.d("bad", "onStatus: bad state is here? "+ status);
-            offCam();
+//            offCam();
         }
     }
 }
