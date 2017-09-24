@@ -57,6 +57,7 @@ public class CurrentDeliveryActivity extends AppCompatActivity implements Status
 
     @Override
     public void onStatus(String status) {
+        Log.d("dd", "onStatus: bad state: deterministicstring");
         if (status.equals(Back4app.STATUS_0_PRESTART)) {
             Log.d("dd", "onStatus: bad state: "+ status);
         } else if (status.equals(Back4app.STATUS_1_STARTED)) {
@@ -80,7 +81,7 @@ public class CurrentDeliveryActivity extends AppCompatActivity implements Status
             titleText.setText(STATUS_5_ADDRESS);
             Log.d("dd", "onStatus: change: "+ status);
         } else {
-            Log.d("bad", "onStatus: bad state");
+            Log.d("bad", "onStatus: bad state is here? "+ status);
         }
     }
 }
