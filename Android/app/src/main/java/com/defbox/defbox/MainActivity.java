@@ -37,6 +37,7 @@ public class MainActivity extends AppCompatActivity
         final Context context = getApplicationContext();
 
         Back4app.initialize(context);
+        Back4app.installPush();
 
         // HyperTrackAdapter.initialize(context);
 

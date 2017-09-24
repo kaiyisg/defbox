@@ -8,6 +8,7 @@ import com.parse.LogInCallback;
 import com.parse.Parse;
 import com.parse.ParseCloud;
 import com.parse.ParseException;
+import com.parse.ParseInstallation;
 import com.parse.ParseUser;
 
 import java.util.HashMap;
@@ -80,6 +81,12 @@ public final class Back4app {
                 .clientKey("PYqsMqjEi2aveBF8yozobRyTLff4moi8IQaXbDFy") //PASTE YOUR CLIENT KEY
                 .server("https://parseapi.Back4app.com/").build()
         );
+    }
+
+    public static void installPush() {
+        ParseInstallation installation = ParseInstallation.getCurrentInstallation();
+        installation.put("GCMSenderId", "1000779001422");
+        installation.saveInBackground();
     }
 
 

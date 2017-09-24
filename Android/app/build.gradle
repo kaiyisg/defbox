@@ -29,7 +29,7 @@ dependencies {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
 
-    compile project(':esl-sdk')
+//    compile project(':esl-sdk')
     compile('commons-validator:commons-validator:1.5.1') {
         exclude group: 'commons-logging'
         exclude group: 'commons-collections'
@@ -42,12 +42,19 @@ dependencies {
     compile 'com.android.support:design:26.+'
     compile 'com.android.support:support-v4:26.+'
     compile 'com.android.support.constraint:constraint-layout:1.0.2'
-    compile 'com.google.code.gson:gson:2.7'
+    compile ('com.google.code.gson:gson:2.7') {
+        exclude group:"com.google.android.gms"
+    }
     compile 'com.github.barteksc:pdfium-android:1.4.0'
     compile 'commons-io:commons-io:2.4'
-    compile('com.hypertrack:android:0.4.11:release@aar') {
-        transitive = true;
-    }
+//    compile('com.hypertrack:android:0.4.11:release@aar') {
+//        transitive = true;
+//        exclude group: 'com.google.android.gms'
+//    }
+    compile 'com.parse.bolts:bolts-android:1.+'
+    compile 'com.parse:parse-android:1.+'
+    compile 'com.google.firebase:firebase-core:10.0.1'
+    compile 'com.google.firebase:firebase-messaging:10.0.1'
 
     testCompile 'junit:junit:4.12'
 }
@@ -73,3 +80,5 @@ repositories {
     maven { url "https://maven.google.com" }
     maven { url 'http://hypertrack-android-sdk.s3-website-us-west-2.amazonaws.com/' }
 }
+
+apply plugin: 'com.google.gms.google-services'
