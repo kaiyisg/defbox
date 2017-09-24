@@ -2,7 +2,9 @@ package com.defbox.defbox;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Handler;
+import android.support.constraint.ConstraintLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -27,7 +29,7 @@ public class TripArrivedActivity extends AppCompatActivity implements StatusList
 
     public static final String STATUS_3_TITLESEC = "Please place the parcel within DefBox";
     public static final String STATUS_4_TITLESEC = "Please hold on.";
-    public static final String STATUS_5_TITLESEC = "Swipe up to end session and start your next trip!";
+    public static final String STATUS_5_TITLESEC = "Click below to end session and start your next trip!";
 
     public static final String STATUS_3_TITLETER = "Tap here when done";
 
@@ -84,6 +86,16 @@ public class TripArrivedActivity extends AppCompatActivity implements StatusList
             Log.d("dd", "onStatus: change: "+ status);
             title.setText(STATUS_5_TITLE);
             titleSec.setText(STATUS_5_TITLESEC);
+            ((TextView)findViewById(R.id.txt_currentDeliveryHeader)).setText("Click to start your next trip!");
+            ConstraintLayout next = findViewById(R.id.currentDeliveryRow);
+            next.setBackgroundResource(R.color.colorAccent);
+            next.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent i = new Intent(context, TripStartedActivity.class);
+                    startActivity(i);
+                }
+            });
         } else {
             Log.d("bad", "onStatus: bad state is here? "+ status);
         }
