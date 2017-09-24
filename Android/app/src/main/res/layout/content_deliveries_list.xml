@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.defbox.defbox.DeliveriesListActivity"
+    tools:showIn="@layout/activity_deliveries_list">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <ImageView
+            android:id="@+id/img_deliveriesListHeader"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            android:cropToPadding="true"
+            app:srcCompat="@drawable/delivery_list_header" />
+
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/nextDeliveryRow"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/colorPrimary">
+
+            <TextView
+                android:id="@+id/txt_nextDeliveryHeader"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="24dp"
+                android:layout_marginTop="16dp"
+                android:text="You have a package lined up"
+                android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+                android:textSize="20sp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginStart="24dp" />
+
+            <TextView
+                android:id="@+id/txt_nextDeliveryDay"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="27"
+                android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+                android:textColor="@color/textLight"
+                app:layout_constraintLeft_toLeftOf="@+id/txt_nextDeliveryHeader"
+                app:layout_constraintTop_toBottomOf="@+id/txt_nextDeliveryHeader" />
+
+            <TextView
+                android:id="@+id/txt_nextDeliveryMonth"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="SEP"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                android:textColor="@color/textLight"
+                android:textSize="18sp"
+                app:layout_constraintLeft_toLeftOf="@+id/txt_nextDeliveryDay"
+                app:layout_constraintRight_toRightOf="@+id/txt_nextDeliveryDay"
+                app:layout_constraintTop_toBottomOf="@+id/txt_nextDeliveryDay" />
+
+            <ImageView
+                android:id="@+id/icon_nextDeliverySource"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginLeft="40dp"
+                android:layout_marginTop="8dp"
+                app:layout_constraintLeft_toRightOf="@+id/txt_nextDeliveryDay"
+                app:layout_constraintTop_toBottomOf="@+id/txt_nextDeliveryHeader"
+                app:srcCompat="@android:drawable/star_big_off"
+                android:layout_marginStart="40dp" />
+
+            <ImageView
+                android:id="@+id/icon_nextDeliveryLoc"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginTop="4dp"
+                app:layout_constraintLeft_toLeftOf="@+id/icon_nextDeliverySource"
+                app:layout_constraintTop_toBottomOf="@+id/icon_nextDeliverySource"
+                app:srcCompat="@android:drawable/star_big_off" />
+
+            <ImageView
+                android:id="@+id/icon_nextDeliveryTime"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginBottom="16dp"
+                android:layout_marginTop="4dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="@+id/icon_nextDeliveryLoc"
+                app:layout_constraintTop_toBottomOf="@+id/icon_nextDeliveryLoc"
+                app:srcCompat="@android:drawable/star_big_off" />
+
+            <TextView
+                android:id="@+id/txt_nextDeliverySource"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:text="Etsy"
+                android:textAppearance="@style/TextAppearance.AppCompat"
+                android:textSize="12sp"
+                app:layout_constraintBottom_toBottomOf="@+id/icon_nextDeliverySource"
+                app:layout_constraintLeft_toRightOf="@+id/icon_nextDeliverySource"
+                app:layout_constraintTop_toTopOf="@+id/icon_nextDeliverySource"
+                android:layout_marginStart="8dp" />
+
+            <TextView
+                android:id="@+id/txt_nextDeliveryLoc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:text="963 Hillsboro Avenue"
+                android:textAppearance="@style/TextAppearance.AppCompat"
+                android:textSize="12sp"
+                app:layout_constraintBottom_toBottomOf="@+id/icon_nextDeliveryLoc"
+                app:layout_constraintLeft_toRightOf="@+id/icon_nextDeliveryLoc"
+                app:layout_constraintTop_toTopOf="@+id/icon_nextDeliveryLoc"
+                android:layout_marginStart="8dp" />
+
+            <TextView
+                android:id="@+id/txt_nextDeliveryTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:text="11:00 - 12:00 AM"
+                android:textAppearance="@style/TextAppearance.AppCompat"
+                android:textSize="12sp"
+                app:layout_constraintBottom_toBottomOf="@+id/icon_nextDeliveryTime"
+                app:layout_constraintLeft_toRightOf="@+id/icon_nextDeliveryTime"
+                app:layout_constraintTop_toTopOf="@+id/icon_nextDeliveryTime"
+                android:layout_marginStart="8dp" />
+        </android.support.constraint.ConstraintLayout>
+    </LinearLayout>
+
+
+
+</ScrollView>
