@@ -54,6 +54,14 @@ public class CurrentDeliveryActivity extends AppCompatActivity implements Status
             @Override
             public void onClick(View view) {
                 Back4app.postStatus(context, Back4app.STATUS_3_OPENED);
+
+//                Handler networkHandler = new Handler();
+//                networkHandler.postDelayed(openDoor, 100);
+                try {
+                    HttpConnector.post("http://172.20.10.9:9999/door/open","");
+                } catch(Exception e) {
+                    Log.d("e", "onClick: " + e.toString());
+                }
             }
         });
         stage_5_button = findViewById(R.id.STAGE_5_BUTTON);
@@ -61,6 +69,14 @@ public class CurrentDeliveryActivity extends AppCompatActivity implements Status
             @Override
             public void onClick(View view) {
                 Back4app.postStatus(context, Back4app.STATUS_5_LOCKED);
+
+//                Handler networkHandler = new Handler();
+//                networkHandler.postDelayed(closeDoor, 100);
+                try {
+                    HttpConnector.post("http://172.20.10.9:9999/door/close","");
+                } catch(Exception e) {
+                    Log.d("e", "onClick: " + e.toString());
+                }
             }
         });
         back_to_list = findViewById(R.id.BACK_TO_LIST_BUTTON);
@@ -86,6 +102,28 @@ public class CurrentDeliveryActivity extends AppCompatActivity implements Status
             handler.postDelayed(this, 1000);
         }
     };
+
+//    private Runnable closeDoor = new Runnable() {
+//        @Override
+//        public void run() {
+//            try {
+//                HttpConnector.post("http://172.20.10.9:9999/door/close","");
+//            } catch(Exception e) {
+//                Log.d("e", "onClick: " + e.toString());
+//            }
+//        }
+//    };
+//
+//    private Runnable openDoor = new Runnable() {
+//        @Override
+//        public void run() {
+//            try {
+//                HttpConnector.post("http://172.20.10.9:9999/door/open","");
+//            } catch(Exception e) {
+//                Log.d("e", "onClick: " + e.toString());
+//            }
+//        }
+//    };
 
     @Override
     protected void onPause() {
