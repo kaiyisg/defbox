@@ -12,13 +12,5 @@ b4a deploy
 ```
 
 ```
-curl -X POST \
-
--H "X-Parse-Application-Id: ${APPLICATION_ID}" \
-
--H "X-Parse-REST-API-Key: ${REST_API_KEY}" \
-
--H "Content-Type: application/json" \ -d '{}' \
-
-https://parseapi.back4app.com/functions/hello
+curl -X POST -H "X-Parse-Application-Id: eVHV5Cmc3TtPcJJYp4wK1mjPs4zZOxcJwAokkGV3" -H "X-Parse-REST-API-Key: MNLFymdf3PS6ykjFTGYkWlu7Pr8oIFOuFE0whnQf" -H "Content-Type: application/json" -d '{}' https://parseapi.back4app.com/functions/test
 ```
