@@ -7,5 +7,7 @@
     <string name="action_settings">Settings</string>
     <string name="dialog_action_ok">Ok</string>
     <string name="dialog_error_title">Something went wrong</string>
+    <string name="title_activity_receiver">ReceiverActivity</string>
+    <string name="title_activity_deliverer">DelivererActivity</string>
     <!--<string name="action_settings">Settings</string>-->
 </resources>

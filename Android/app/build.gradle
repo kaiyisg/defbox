@@ -24,30 +24,30 @@ android {
 }
 
 dependencies {
-    compile 'com.android.support:multidex:1.0.1'
     compile fileTree(include: ['*.jar'], dir: 'libs')
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
-    compile 'com.parse:parse-android:1.16.2'
-    compile 'com.android.support:appcompat-v7:26.+'
-    compile 'com.android.support:design:26.+'
-    compile 'com.android.support:support-v4:26.+'
-    compile 'com.google.android.gms:play-services:10.0.1'
-    compile 'com.android.support.constraint:constraint-layout:1.0.2'
-    testCompile 'junit:junit:4.12'
 
     compile project(':esl-sdk')
-    compile 'com.google.code.gson:gson:2.7'
-    compile 'com.github.barteksc:pdfium-android:1.4.0'
-    compile 'commons-io:commons-io:2.4'
-    compile 'com.android.support:multidex:1.0.1'
     compile('commons-validator:commons-validator:1.5.1') {
         exclude group: 'commons-logging'
         exclude group: 'commons-collections'
         exclude group: 'commons-digester'
         exclude group: 'commons-beanutils'
     }
+    compile 'com.android.support:multidex:1.0.1'
+    compile 'com.android.support:multidex:1.0.1'
+    compile 'com.parse:parse-android:1.16.2'
+    compile 'com.android.support:appcompat-v7:26.+'
+    compile 'com.android.support:design:26.+'
+    compile 'com.android.support:support-v4:26.+'
+    compile 'com.google.android.gms:play-services:10.0.1'
+    compile 'com.android.support.constraint:constraint-layout:1.0.2'
+    compile 'com.google.code.gson:gson:2.7'
+    compile 'com.github.barteksc:pdfium-android:1.4.0'
+    compile 'commons-io:commons-io:2.4'
+    testCompile 'junit:junit:4.12'
 }
 
 buildscript {
@@ -62,7 +62,7 @@ fileTree(dir: 'libs', include: '**/*.aar')
         .each { File file ->
     dependencies.add("compile", [
             name: file.name.lastIndexOf('.').with { it != -1 ? file.name[0..<it] : file.name },
-            ext: 'aar'
+            ext : 'aar'
     ])
 }
 repositories {
