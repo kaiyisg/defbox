@@ -146,7 +146,7 @@ public class MainActivity extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.nav_receiver) {
-            Intent myIntent = new Intent(MainActivity.this, ReceiverActivity.class);
+            Intent myIntent = new Intent(MainActivity.this, DeliveriesListActivity.class);
             startActivity(myIntent);
         } else if (id == R.id.nav_deliverer) {
             Intent myIntent = new Intent(MainActivity.this, DelivererActivity.class);

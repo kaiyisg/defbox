@@ -29,7 +29,7 @@ public final class Back4app {
     public static final String STATUS_3_OPENED = "STATUS_3_OPENED";
     public static final String STATUS_4_CLOSED = "STATUS_4_CLOSED";
     public static final String STATUS_5_LOCKED = "STATUS_5_LOCKED";
-    public static String m = "";
+    public static String lastReceivedStatus = "";
 
     public static void login(final Context context) {
         ParseUser.logInInBackground("kaiyi", "kaiyi", new LogInCallback() {
