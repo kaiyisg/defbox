@@ -139,7 +139,9 @@
                 android:text="Delivering the Goodies"
                 android:textAppearance="@style/TextAppearance.AppCompat.Headline"
                 app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/imageView13" />
+                app:layout_constraintTop_toBottomOf="@+id/imageView13"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_marginBottom="16dp" />
         </android.support.constraint.ConstraintLayout>
 
         <ImageView
@@ -151,13 +153,64 @@
 
         <android.support.constraint.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="wrap_content">
 
             <ImageView
                 android:id="@+id/imageView15"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="60dp"
+                android:layout_marginTop="16dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
                 app:srcCompat="@drawable/user" />
+
+            <ImageView
+                android:id="@+id/imageView16"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="0dp"
+                android:layout_marginRight="0dp"
+                android:layout_marginTop="16dp"
+                app:layout_constraintLeft_toLeftOf="@+id/imageView15"
+                app:layout_constraintRight_toRightOf="@+id/imageView15"
+                app:layout_constraintTop_toBottomOf="@+id/imageView15"
+                app:srcCompat="@drawable/envelope" />
+
+            <TextView
+                android:id="@+id/textView16"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="0dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="0dp"
+                android:text="UPS"
+                app:layout_constraintBottom_toBottomOf="@+id/imageView16"
+                app:layout_constraintLeft_toRightOf="@+id/imageView16"
+                app:layout_constraintTop_toTopOf="@+id/imageView16" />
+
+            <TextView
+                android:id="@+id/textView17"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="0dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="0dp"
+                android:text="John Smith"
+                app:layout_constraintBottom_toBottomOf="@+id/imageView15"
+                app:layout_constraintLeft_toRightOf="@+id/imageView15"
+                app:layout_constraintTop_toTopOf="@+id/imageView15" />
+
+            <TextView
+                android:id="@+id/textView18"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="24dp"
+                android:text="John would be in Sunnyvale at around 9 AM. You will be notified when John is 30 mins away."
+                app:layout_constraintLeft_toLeftOf="@+id/imageView16"
+                app:layout_constraintTop_toBottomOf="@+id/imageView16" />
+
         </android.support.constraint.ConstraintLayout>
     </LinearLayout>
 
