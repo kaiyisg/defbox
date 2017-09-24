@@ -41,10 +41,11 @@ public class FutureDeliveryActivity extends AppCompatActivity implements StatusL
         if (Back4app.lastReceivedStatus.equals(Back4app.STATUS_0_PRESTART)) {
             Log.d("dd", "onStatus: nothing changed");
         } else if (Back4app.lastReceivedStatus.equals(Back4app.STATUS_1_STARTED)) {
+            handler.removeCallbacks(runnable);
             Intent i = new Intent(context, CurrentDeliveryActivity.class);
             startActivity(i);
         } else {
-            Log.d("bad", "onStatus: bad state");
+            Log.d("bad", "onStatus: bad state from future delivery string");
         }
     }
 }
