@@ -52,24 +52,202 @@
                 app:layout_constraintTop_toTopOf="parent"
                 android:layout_marginStart="8dp"
                 android:layout_marginEnd="8dp" />
+
         </android.support.constraint.ConstraintLayout>
 
         <ImageView
             android:id="@+id/img_map"
             android:layout_width="match_parent"
             android:layout_height="170dp"
-            app:srcCompat="@drawable/map_path" />
+            app:srcCompat="@drawable/map_path"
+            tools:layout_editor_absoluteX="8dp"
+            tools:layout_editor_absoluteY="81dp" />
+
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/row_5"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/colorPrimary"
+            android:visibility="gone"
+            tools:layout_editor_absoluteX="8dp"
+            tools:layout_editor_absoluteY="8dp">
+
+            <TextView
+                android:id="@+id/txt_currentDeliveryHeader5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="24dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="24dp"
+                android:text="Your Devbox is locked."
+                android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+                android:textSize="24sp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/i_nextSource5"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginLeft="40dp"
+                android:layout_marginStart="40dp"
+                android:layout_marginTop="32dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txt_currentDeliveryHeader5"
+                app:srcCompat="@drawable/envelope" />
+
+            <TextView
+                android:id="@+id/txt_currentDeliverySource5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginStart="8dp"
+                android:text="Your parcel is secured!"
+                android:textAppearance="@style/TextAppearance.AppCompat"
+                android:textSize="12sp"
+                app:layout_constraintBottom_toBottomOf="@+id/i_nextSource5"
+                app:layout_constraintLeft_toRightOf="@+id/i_nextSource5"
+                app:layout_constraintTop_toTopOf="@+id/i_nextSource5" />
+
+            <Button
+                android:id="@+id/BACK_TO_LIST_BUTTON"
+                style="@style/Widget.AppCompat.Button.Colored"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="48dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginTop="16dp"
+                android:text="OK"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txt_currentDeliveryHeader5"
+                app:layout_constraintVertical_bias="0.992" />
+        </android.support.constraint.ConstraintLayout>
+
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/row_4"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/colorPrimary"
+            android:visibility="gone"
+            tools:layout_editor_absoluteX="8dp"
+            tools:layout_editor_absoluteY="8dp">
+
+            <TextView
+                android:id="@+id/txt_currentDeliveryHeader4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="24dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="24dp"
+                android:text="Your Devbox has been closed."
+                android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+                android:textSize="24sp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/i_nextSource4"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginLeft="40dp"
+                android:layout_marginStart="40dp"
+                android:layout_marginTop="32dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txt_currentDeliveryHeader4"
+                app:srcCompat="@drawable/email" />
+
+            <TextView
+                android:id="@+id/txt_currentDeliverySource4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginStart="8dp"
+                android:text="Remember to lock your box!"
+                android:textAppearance="@style/TextAppearance.AppCompat"
+                android:textSize="12sp"
+                app:layout_constraintBottom_toBottomOf="@+id/i_nextSource4"
+                app:layout_constraintLeft_toRightOf="@+id/i_nextSource4"
+                app:layout_constraintTop_toTopOf="@+id/i_nextSource4" />
+
+            <Button
+                android:id="@+id/STAGE_5_BUTTON"
+                style="@style/Widget.AppCompat.Button.Colored"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="48dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginTop="16dp"
+                android:text="lock box"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txt_currentDeliveryHeader4"
+                app:layout_constraintVertical_bias="0.992"
+                android:layout_marginEnd="16dp" />
+        </android.support.constraint.ConstraintLayout>
+
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/row_3"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/colorPrimary"
+            android:visibility="gone"
+            tools:layout_editor_absoluteX="8dp"
+            tools:layout_editor_absoluteY="8dp">
+
+            <TextView
+                android:id="@+id/txt_currentDeliveryHeader3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="24dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="24dp"
+                android:text="You opened your DevBox"
+                android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+                android:textSize="24sp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/i_nextSource3"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginBottom="56dp"
+                android:layout_marginLeft="40dp"
+                android:layout_marginStart="40dp"
+                android:layout_marginTop="32dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txt_currentDeliveryHeader3"
+                app:srcCompat="@drawable/home" />
+
+            <TextView
+                android:id="@+id/txt_currentDeliverySource3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginStart="8dp"
+                android:text="Wait for your box to be closed.."
+                android:textAppearance="@style/TextAppearance.AppCompat"
+                android:textSize="12sp"
+                app:layout_constraintBottom_toBottomOf="@+id/i_nextSource3"
+                app:layout_constraintLeft_toRightOf="@+id/i_nextSource3"
+                app:layout_constraintTop_toTopOf="@+id/i_nextSource3" />
+
+        </android.support.constraint.ConstraintLayout>
 
         <android.support.constraint.ConstraintLayout
             android:id="@+id/row_2"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@color/colorPrimary"
+            android:visibility="gone"
             tools:layout_editor_absoluteX="8dp"
             tools:layout_editor_absoluteY="8dp">
 
             <TextView
-                android:id="@+id/txt_currentDeliveryHeader"
+                android:id="@+id/txt_currentDeliveryHeader2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="24dp"
@@ -82,39 +260,18 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <ImageView
-                android:id="@+id/i_nextSource"
-                android:layout_width="24dp"
-                android:layout_height="24dp"
+                android:id="@+id/i_nextSource2"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginLeft="40dp"
                 android:layout_marginStart="40dp"
                 android:layout_marginTop="16dp"
-                app:layout_constraintTop_toBottomOf="@+id/txt_currentDeliveryHeader"
-                app:srcCompat="@drawable/shopping_cart_add"
-                android:layout_marginLeft="6dp"
-                app:layout_constraintLeft_toLeftOf="parent" />
-
-            <ImageView
-                android:id="@+id/i_nextLoc"
-                android:layout_width="24dp"
-                android:layout_height="24dp"
-                android:layout_marginTop="4dp"
-                app:layout_constraintLeft_toLeftOf="@+id/i_nextSource"
-                app:layout_constraintTop_toBottomOf="@+id/i_nextSource"
-                app:srcCompat="@drawable/home" />
-
-            <ImageView
-                android:id="@+id/i_nextTime"
-                android:layout_width="24dp"
-                android:layout_height="24dp"
-                android:layout_marginBottom="24dp"
-                android:layout_marginTop="4dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintLeft_toLeftOf="@+id/i_nextLoc"
-                app:layout_constraintTop_toBottomOf="@+id/i_nextLoc"
-                app:layout_constraintVertical_bias="0.0"
-                app:srcCompat="@drawable/clock" />
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txt_currentDeliveryHeader2"
+                app:srcCompat="@drawable/shopping_cart_add" />
 
             <TextView
-                android:id="@+id/txt_currentDeliverySource"
+                android:id="@+id/txt_currentDeliverySource2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="8dp"
@@ -122,35 +279,39 @@
                 android:text="Etsy"
                 android:textAppearance="@style/TextAppearance.AppCompat"
                 android:textSize="12sp"
-                app:layout_constraintBottom_toBottomOf="@+id/i_nextSource"
-                app:layout_constraintLeft_toRightOf="@+id/i_nextSource"
-                app:layout_constraintTop_toTopOf="@+id/i_nextSource" />
+                app:layout_constraintBottom_toBottomOf="@+id/i_nextSource2"
+                app:layout_constraintLeft_toRightOf="@+id/i_nextSource2"
+                app:layout_constraintTop_toTopOf="@+id/i_nextSource2" />
 
             <TextView
-                android:id="@+id/txt_currentDeliveryLoc"
+                android:id="@+id/txt_currentDeliveryTime2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="8dp"
-                android:layout_marginStart="8dp"
-                android:text="963 Hillsboro Avenue"
+                android:layout_marginBottom="24dp"
+                android:layout_marginTop="8dp"
+                android:text='12" x 10" x 3"'
+                android:textAlignment="viewStart"
                 android:textAppearance="@style/TextAppearance.AppCompat"
                 android:textSize="12sp"
-                app:layout_constraintBottom_toBottomOf="@+id/i_nextLoc"
-                app:layout_constraintLeft_toRightOf="@+id/i_nextLoc"
-                app:layout_constraintTop_toTopOf="@+id/i_nextLoc" />
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="@+id/i_nextSource2"
+                app:layout_constraintTop_toBottomOf="@+id/i_nextSource2"
+                app:layout_constraintVertical_bias="0.0" />
 
-            <TextView
-                android:id="@+id/txt_currentDeliveryTime"
+            <Button
+                android:id="@+id/STAGE_3_BUTTON"
+                style="@style/Widget.AppCompat.Button.Colored"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="8dp"
-                android:layout_marginStart="8dp"
-                android:text="14 minutes"
-                android:textAppearance="@style/TextAppearance.AppCompat"
-                android:textSize="12sp"
-                app:layout_constraintBottom_toBottomOf="@+id/i_nextTime"
-                app:layout_constraintLeft_toRightOf="@+id/i_nextTime"
-                app:layout_constraintTop_toTopOf="@+id/i_nextTime" />
+                android:layout_marginBottom="8dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginTop="16dp"
+                android:text="unlock box"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txt_currentDeliveryHeader2"
+                app:layout_constraintVertical_bias="0.466"
+                android:layout_marginEnd="16dp" />
         </android.support.constraint.ConstraintLayout>
 
         <android.support.constraint.ConstraintLayout
@@ -198,8 +359,8 @@
 
             <ImageView
                 android:id="@+id/i_nextSource"
-                android:layout_width="24dp"
-                android:layout_height="24dp"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
                 android:layout_marginLeft="40dp"
                 android:layout_marginStart="40dp"
                 android:layout_marginTop="16dp"
@@ -209,8 +370,8 @@
 
             <ImageView
                 android:id="@+id/i_nextLoc"
-                android:layout_width="24dp"
-                android:layout_height="24dp"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
                 android:layout_marginTop="4dp"
                 app:layout_constraintLeft_toLeftOf="@+id/i_nextSource"
                 app:layout_constraintTop_toBottomOf="@+id/i_nextSource"
@@ -218,8 +379,8 @@
 
             <ImageView
                 android:id="@+id/i_nextTime"
-                android:layout_width="24dp"
-                android:layout_height="24dp"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
                 android:layout_marginBottom="24dp"
                 android:layout_marginTop="4dp"
                 app:layout_constraintBottom_toBottomOf="parent"

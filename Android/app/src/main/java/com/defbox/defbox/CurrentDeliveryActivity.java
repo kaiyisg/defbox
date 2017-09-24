@@ -67,6 +67,9 @@ public class CurrentDeliveryActivity extends AppCompatActivity implements Status
 
     @Override
     public void onStatus(String status) {
+
+        // TODO make sure to set visibility normal for row_1 even at first entrance; everything default 'gone'
+
         Log.d("dd", "onStatus: bad state: deterministicstring");
         if (status.equals(Back4app.STATUS_0_PRESTART)) {
             Log.d("dd", "onStatus: bad state: "+ status);
