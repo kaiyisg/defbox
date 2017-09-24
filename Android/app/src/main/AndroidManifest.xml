@@ -18,7 +18,7 @@
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
         <!-- Register Services here -->
         <service
             android:name=".adapter.MyFirebaseMessagingService"
@@ -26,33 +26,29 @@
             <intent-filter>
                 <action android:name="com.google.firebase.MESSAGING_EVENT" />
             </intent-filter>
-        </service><![CDATA[
+        </service>
         android:theme="@style/AppTheme.NoActionBar" />
-        ]]>
         <activity
             android:name=".DelivererActivity"
             android:label="@string/title_activity_deliverer"
             android:theme="@style/AppTheme.NoActionBar" />
-
-
-
         <activity
             android:name=".DeliveriesListActivity"
             android:label="@string/title_activity_delivery_list"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".FutureDeliveryActivity"
-            android:parentActivityName=".DeliveriesListActivity">
-        </activity>
-        <activity android:name=".CurrentDeliveryActivity"
+            android:parentActivityName=".DeliveriesListActivity"></activity>
+        <activity
+            android:name=".CurrentDeliveryActivity"
             android:parentActivityName=".DeliveriesListActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
         </activity>
+        <activity android:name=".TripsListActivity"></activity>
     </application>
 
 </manifest>
