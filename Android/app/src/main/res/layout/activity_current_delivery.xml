@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.defbox.defbox.CurrentDeliveryActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/imageView7"
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            app:srcCompat="@drawable/driver_circled" />
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/textView19"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginTop="8dp"
+                android:text="Palo Alto"
+                android:textColor="@color/textDark"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView15"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_marginBottom="16dp" />
+
+            <TextView
+                android:id="@+id/textView15"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginTop="16dp"
+                android:text="John Smith, UPS"
+                android:textColor="@color/textDark"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </android.support.constraint.ConstraintLayout>
+
+        <ImageView
+            android:id="@+id/img_map"
+            android:layout_width="match_parent"
+            android:layout_height="180dp"
+            app:srcCompat="@color/border_tracking_experience" />
+
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/currentDeliveryRow"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/colorPrimary">
+
+            <TextView
+                android:id="@+id/txt_currentDeliveryHeader"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="24dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="24dp"
+                android:text="Your Package is arriving"
+                android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+                android:textSize="24sp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/txt_currentDeliveryDay"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:text="27"
+                android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+                android:textColor="@color/textLight"
+                app:layout_constraintLeft_toLeftOf="@+id/txt_currentDeliveryHeader"
+                app:layout_constraintTop_toBottomOf="@+id/txt_currentDeliveryHeader"
+                android:layout_marginLeft="0dp" />
+
+            <TextView
+                android:id="@+id/txt_currentDeliveryMonth"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="SEP"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                android:textColor="@color/textLight"
+                android:textSize="18sp"
+                app:layout_constraintLeft_toLeftOf="@+id/txt_currentDeliveryDay"
+                app:layout_constraintRight_toRightOf="@+id/txt_currentDeliveryDay"
+                app:layout_constraintTop_toBottomOf="@+id/txt_currentDeliveryDay" />
+
+            <ImageView
+                android:id="@+id/i_nextSource"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginLeft="40dp"
+                android:layout_marginStart="40dp"
+                android:layout_marginTop="16dp"
+                app:layout_constraintLeft_toRightOf="@+id/txt_currentDeliveryDay"
+                app:layout_constraintTop_toBottomOf="@+id/txt_currentDeliveryHeader"
+                app:srcCompat="@drawable/shopping_cart_add" />
+
+            <ImageView
+                android:id="@+id/i_nextLoc"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginTop="4dp"
+                app:layout_constraintLeft_toLeftOf="@+id/i_nextSource"
+                app:layout_constraintTop_toBottomOf="@+id/i_nextSource"
+                app:srcCompat="@drawable/home" />
+
+            <ImageView
+                android:id="@+id/i_nextTime"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginBottom="24dp"
+                android:layout_marginTop="4dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="@+id/i_nextLoc"
+                app:layout_constraintTop_toBottomOf="@+id/i_nextLoc"
+                app:srcCompat="@drawable/clock"
+                android:layout_marginLeft="0dp"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <TextView
+                android:id="@+id/txt_currentDeliverySource"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:text="Etsy"
+                android:textAppearance="@style/TextAppearance.AppCompat"
+                android:textSize="12sp"
+                app:layout_constraintBottom_toBottomOf="@+id/i_nextSource"
+                app:layout_constraintLeft_toRightOf="@+id/i_nextSource"
+                app:layout_constraintTop_toTopOf="@+id/i_nextSource"
+                android:layout_marginStart="8dp" />
+
+            <TextView
+                android:id="@+id/txt_currentDeliveryLoc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:text="963 Hillsboro Avenue"
+                android:textAppearance="@style/TextAppearance.AppCompat"
+                android:textSize="12sp"
+                app:layout_constraintBottom_toBottomOf="@+id/i_nextLoc"
+                app:layout_constraintLeft_toRightOf="@+id/i_nextLoc"
+                app:layout_constraintTop_toTopOf="@+id/i_nextLoc"
+                android:layout_marginStart="8dp" />
+
+            <TextView
+                android:id="@+id/txt_currentDeliveryTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginStart="8dp"
+                android:text="14 minutes"
+                android:textAppearance="@style/TextAppearance.AppCompat"
+                android:textSize="12sp"
+                app:layout_constraintBottom_toBottomOf="@+id/i_nextTime"
+                app:layout_constraintLeft_toRightOf="@+id/i_nextTime"
+                app:layout_constraintTop_toTopOf="@+id/i_nextTime" />
+        </android.support.constraint.ConstraintLayout>
+    </LinearLayout>
+</ScrollView>
