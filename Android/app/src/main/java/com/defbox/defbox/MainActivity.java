@@ -33,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
 
         Back4app.initialize(context);
 
-        HyperTrackAdapter.initialize(this);
+//        HyperTrackAdapter.initialize(this);
 
         ImageButton receiverButton = findViewById(R.id.imageButton2);
         ImageButton delivererButton = findViewById(R.id.imageButton);
@@ -41,6 +41,8 @@ public class MainActivity extends AppCompatActivity {
         receiverButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Back4app.postStatus(context, Back4app.STATUS_0_PRESTART);
+                Back4app.lastReceivedStatus = Back4app.STATUS_0_PRESTART;
                 Intent i = new Intent(context, DeliveriesListActivity.class);
                 startActivity(i);
             }
@@ -49,6 +51,8 @@ public class MainActivity extends AppCompatActivity {
         delivererButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Back4app.postStatus(context, Back4app.STATUS_0_PRESTART);
+                Back4app.lastReceivedStatus = Back4app.STATUS_0_PRESTART;
                 Intent i = new Intent(context, DelivererActivity.class);
                 startActivity(i);
             }
@@ -88,7 +92,7 @@ public class MainActivity extends AppCompatActivity {
 //            }
 //        });
 
-        HyperTrackAdapter.checkForLocationSettings();
+//        HyperTrackAdapter.checkForLocationSettings();
 
 
 //        handler.postDelayed(runnable, 100);
@@ -105,7 +109,7 @@ public class MainActivity extends AppCompatActivity {
 
     protected void onPause() {
         super.onPause();
-        HyperTrackAdapter.stop();
+//        HyperTrackAdapter.stop();
     }
 
     /**
