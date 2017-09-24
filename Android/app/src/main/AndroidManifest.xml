@@ -28,10 +28,7 @@
             </intent-filter>
         </service>
         android:theme="@style/AppTheme.NoActionBar" />
-        <activity
-            android:name=".DelivererActivity"
-            android:label="@string/title_activity_deliverer"
-            android:theme="@style/AppTheme.NoActionBar" />
+
         <activity
             android:name=".DeliveriesListActivity"
             android:label="@string/title_activity_delivery_list"
@@ -48,8 +45,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".TripsListActivity" />
-        <activity android:name=".TripStartedActivity"></activity>
+        <activity android:name=".TripsListActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".TripStartedActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".TripArrivedActivity"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>
