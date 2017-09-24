@@ -42,7 +42,9 @@ public class MainActivity extends AppCompatActivity
 
         final Button loginButton = findViewById(R.id.button1);
         final Button statusButton = findViewById(R.id.button2);
-        final Button statusPostButton = findViewById(R.id.button3);
+        final Button statusPost0Button = findViewById(R.id.button3);
+        final Button statusPost1Button = findViewById(R.id.button4);
+        final Button statusPost2Button = findViewById(R.id.button5);
 
         loginButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
@@ -56,9 +58,19 @@ public class MainActivity extends AppCompatActivity
             }
         });
 
-        statusPostButton.setOnClickListener(new View.OnClickListener() {
+        statusPost0Button.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 Back4app.postStatus(context, Back4app.STATUS_0_PRESTART);
+            }
+        });
+        statusPost1Button.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Back4app.postStatus(context, Back4app.STATUS_1_STARTED);
+            }
+        });
+        statusPost2Button.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Back4app.postStatus(context, Back4app.STATUS_2_REACHED);
             }
         });
     }

@@ -20,13 +20,14 @@ Parse.Cloud.define("getStatus", function(request, response) {
 
 Parse.Cloud.define("postStatus", function(request, response) {
     const query = new Parse.Query("delivery");
+    // request.status
     query.equalTo("objectId", "ZSscDRYIMl")
          .first()
          .then((delivery) => {
            delivery.save({
-              status: "STATUS_1_STARTED"
-            }).then(function(gameTurnAgain) {
-              response.success("no data");
+              status: request.params.status
+            }).then(function(data) {
+              response.success("post success");
             }, function(error) {
               response.success("error 2");
             });
