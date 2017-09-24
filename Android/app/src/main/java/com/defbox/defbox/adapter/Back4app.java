@@ -84,10 +84,13 @@ public final class Back4app {
             @Override
             public void done(String status, ParseException e) {
                 if (e == null) {
-                    DialogBuilder.showToast(context, "received object: " + status);
+                    Log.d("Posted", "posted to backend done: " + status);
+//                    DialogBuilder.showToast(context, "received object: " + status);
                 }
                 else {
-                    DialogBuilder.showToast(context, e.toString());
+                    Log.d("Posted", "error "+e.toString());
+
+//                    DialogBuilder.showToast(context, e.toString());
                 }
             }
         });

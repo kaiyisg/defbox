@@ -46,9 +46,9 @@ public class CurrentDeliveryActivity extends AppCompatActivity implements Status
         addressText = findViewById(R.id.textView19);
         state_1.findViewById(R.id.row_1);
         state_2.findViewById(R.id.row_2);
-        state_3.findViewById(R.id.row_3);
-        state_4.findViewById(R.id.row_4);
-        state_5.findViewById(R.id.row_5);
+//        state_3.findViewById(R.id.row_3);
+//        state_4.findViewById(R.id.row_4);
+//        state_5.findViewById(R.id.row_5);
 
 
         context = getApplicationContext();
@@ -67,7 +67,7 @@ public class CurrentDeliveryActivity extends AppCompatActivity implements Status
 
     @Override
     public void onStatus(String status) {
-        Log.d("dd", "onStatus: bad state: deterministicstring");
+        Log.d("dd", "onStatus: callback reached: deterministicstring");
         if (status.equals(Back4app.STATUS_0_PRESTART)) {
             Log.d("dd", "onStatus: bad state: "+ status);
         } else if (status.equals(Back4app.STATUS_1_STARTED)) {

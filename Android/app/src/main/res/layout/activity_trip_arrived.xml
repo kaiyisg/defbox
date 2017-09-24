@@ -100,12 +100,12 @@
                 android:layout_marginStart="8dp"
                 app:srcCompat="@drawable/location_user"
                 android:layout_marginLeft="8dp"
-                app:layout_constraintLeft_toLeftOf="@+id/textView6"
+                app:layout_constraintLeft_toLeftOf="@+id/deliverTitle"
                 android:layout_marginTop="32dp"
-                app:layout_constraintTop_toBottomOf="@+id/textView22" />
+                app:layout_constraintTop_toBottomOf="@+id/deliverTer" />
 
             <TextView
-                android:id="@+id/textView6"
+                android:id="@+id/deliverTitle"
                 android:layout_width="300dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="24dp"
@@ -130,14 +130,24 @@
                 android:layout_marginBottom="0dp" />
 
             <TextView
-                android:id="@+id/textView22"
+                android:id="@+id/deliverTer"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 tools:text="txt_secondaryStatus"
-                android:layout_marginTop="8dp"
-                app:layout_constraintTop_toBottomOf="@+id/textView6"
+                android:layout_marginTop="36dp"
+                app:layout_constraintTop_toBottomOf="@+id/deliverTitle"
+                android:layout_marginLeft="-8dp"
+                app:layout_constraintLeft_toLeftOf="@+id/deliverTitle" />
+
+            <TextView
+                android:id="@+id/deliverSec"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_marginLeft="0dp"
-                app:layout_constraintLeft_toLeftOf="@+id/textView6" />
+                android:layout_marginTop="8dp"
+                app:layout_constraintLeft_toLeftOf="@+id/deliverTitle"
+                app:layout_constraintTop_toBottomOf="@+id/deliverTitle"
+                tools:text="txt_secondaryStatus" />
 
         </android.support.constraint.ConstraintLayout>
 
