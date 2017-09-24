@@ -101,4 +101,10 @@ public class TripArrivedActivity extends AppCompatActivity implements StatusList
         }
     }
 
+    @Override
+    protected void onPause() {
+        super.onPause();
+        handler.removeCallbacks(runnable);
+    }
+
 }

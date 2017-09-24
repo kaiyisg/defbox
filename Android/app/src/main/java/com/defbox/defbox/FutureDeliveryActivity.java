@@ -37,11 +37,16 @@ public class FutureDeliveryActivity extends AppCompatActivity implements StatusL
     };
 
     @Override
+    protected void onPause() {
+        super.onPause();
+        handler.removeCallbacks(runnable);
+    }
+
+    @Override
     public void onStatus(String status) {
         if (Back4app.lastReceivedStatus.equals(Back4app.STATUS_0_PRESTART)) {
             Log.d("dd", "onStatus: nothing changed");
         } else if (Back4app.lastReceivedStatus.equals(Back4app.STATUS_1_STARTED)) {
-            handler.removeCallbacks(runnable);
             Intent i = new Intent(context, CurrentDeliveryActivity.class);
             startActivity(i);
         } else {

@@ -88,6 +88,12 @@ public class CurrentDeliveryActivity extends AppCompatActivity implements Status
     };
 
     @Override
+    protected void onPause() {
+        super.onPause();
+        handler.removeCallbacks(runnable);
+    }
+
+    @Override
     public void onStatus(String status) {
         Log.d("dd", "onStatus: callback reached: deterministicstring");
         if (status.equals(Back4app.STATUS_0_PRESTART)) {
